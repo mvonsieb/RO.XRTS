@@ -1,6 +1,10 @@
 # Status
 This repository is under-construction. Draft for XRTS created based on https://github.com/IHE/supplement-template.git
 
+![](input/images/XRTSScope.PNG)
+![](input/images/RequestsProcedures.PNG)
+![](input/images/ProfilesOverview.PNG)
+
 The IG should be moved under IHE. This location is just for first experiments.
 
 # Overall organization
