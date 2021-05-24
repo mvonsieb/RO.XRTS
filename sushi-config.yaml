@@ -1,0 +1,11 @@
+id: xrts.ro.ihe.net
+canonical: https://profiles.ihe.net/RO.XRTS
+name: XRTS
+status: draft
+version: 0.1.0
+fhirVersion: 4.0.1
+FSHOnly: true
+dependencies:
+   hl7.fhir.us.core: 3.1.0
+   hl7.fhir.us.mcode: 1.16.0
+
