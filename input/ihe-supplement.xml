@@ -5,14 +5,20 @@
     xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation = "http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
     <id value = "ihe.ro.xrts"/>
-    <url value = "https://profiles.ihe.net/RO.XRTS"/><!--"http://ihe.net/fhir/uv/ihe-supplement/ImplementationGuide/ihe.uv.ihe-supplement"-->
-    <version value = "0.0.1"/>
+    <url value = "https://profiles.ihe.net/RO.XRTS/ImplementationGuide/ihe.ro.xrts"/>
+    <!--"http://ihe.net/fhir/uv/ihe-supplement/ImplementationGuide/ihe.uv.ihe-supplement"-->
+    <version value = "0.0.2"/>
     <name value = "IHEROXRTS"/>
     <title value = "Radiation Oncology Exchange of Radiotherapy Summaries (XRTS)"/>
     <status value = "draft"/>
     <experimental value = "false"/>
     <publisher value = "IHE International - Radiation Oncology  Technical Committee"/>
     <contact>
+        <telecom>
+            <!--Or whatever URL and/or email address(es) are appropriate -->
+            <system value = "url"/>
+            <value value = "https://ihe-ro.org"/>
+        </telecom>
         <telecom>
             <!--Or whatever URL and/or email address(es) are appropriate -->
             <system value = "email"/>
@@ -54,6 +60,19 @@
         </reference>
         <name value="Name you want in artifact list"/>
         <description value="Description you want in artifact list"/>
+        </resource>-->
+
+        <!--Build error if name and description of examples are missing.
+        But if examples are added here then all other resources have to be added as well. Or is there an option to add name and description only for the examples?
+        Ideally sushi would take that from the name and description.-->
+        <!--
+        <resource>
+            <reference>
+                <reference value="Patient/Patient-5"/>
+            </reference>
+            <name value="Example Patient Female"/>
+            <description value="Female example patient."/>
+            <exampleBoolean value="true"/>
         </resource>-->
         <page>
             <!--The root will always be toc.html - the template will force it if you don't do it -->
