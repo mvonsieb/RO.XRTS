@@ -11,7 +11,8 @@ RuleSet: RadiotherapyRequestCommon
 * extension MS 
 * extension contains
     http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-modality named mcode-radiotherapy-modality 0..* MS and
-    http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-technique named mcode-radiotherapy-technique 0..*
+    http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-technique named mcode-radiotherapy-technique 0..* and    
+    radiotherapy-dose-prescribed-to-volume named radiotherapy-dose-prescribed-to-volume 0..* MS
 * extension[mcode-radiotherapy-modality].value[x] from http://hl7.org/fhir/us/mcode/ValueSet/mcode-radiotherapy-modality-vs (required) //Probably required in mCODE prescription.
 * extension[mcode-radiotherapy-technique].value[x] from http://hl7.org/fhir/us/mcode/ValueSet/mcode-radiotherapy-technique-vs (required) //Probably  required in mCODE prescription.
 * identifier MS
@@ -46,11 +47,12 @@ RuleSet: RadiotherapyPhasePrescriptionCommon
 * extension contains
     radiotherapy-fractions-prescribed named radiotherapy-fractions-prescribed 1..1 MS and
     radiotherapy-energy named radiotherapy-energy 0..* and
-    radiotherapyTreatmentDeviceType named radiotherapyTreatmentDeviceType 0..* and //MS only XRTS
-    radiotherapy-dose-prescribed-to-volume named radiotherapy-dose-prescribed-to-volume 0..* MS
+    radiotherapyTreatmentDeviceType named radiotherapyTreatmentDeviceType 0..*
 * extension[mcode-radiotherapy-technique] MS
-* extension[radiotherapy-dose-prescribed-to-volume] 1..* MS
-
+* extension[radiotherapy-dose-prescribed-to-volume] 0..* MS
+* extension[radiotherapy-dose-prescribed-to-volume].extension[fractionsPrescribed] 0..0
+* extension[radiotherapy-dose-prescribed-to-volume].extension[fractionsPrescribed] ^short = "Not used in this profile. In a Phase, all volumes are involved in all Fractions."
+* extension[radiotherapy-dose-prescribed-to-volume].extension[fractionsPrescribed] ^definition = "Not used in this profile. In a Phase, all volumes are involved in all Fractions and the number of Fractions is defined in extension radiotherapy-fractions-prescribed. To achieve different numbers of Fractions for different volumes, multiple Phases have to be defined."
 * occurrenceTiming only Timing
 * occurrenceTiming MS
 * occurrenceTiming.repeat.boundsPeriod 0..1
@@ -134,7 +136,7 @@ Usage: #example
 * requester.display = "aria\\user1"
 * reasonCode = ICD10#C61.0 "Malignant neoplasm of prostate" //Try to use Condition resource for diagnosis in XRTS
 * reasonCode.text = "Malignant neoplasm of prostate" //Try to use Condition resource for diagnosis in XRTS 
-* reasonReference.reference = "Condition/Diagnosis-1" 
+* reasonReference.reference = "Condition/Diagnosis-2-Prostate" 
 * bodySite = SCT#181422007 "Entire Prostate" // "Body site that is treated with Radiotherapy"
 * bodySite.text = "Prostate" 
 * note.text = "Free text note in Radiotherapy Prescription"
@@ -177,7 +179,7 @@ Usage: #example
 * identifier[1].value = "urn:oid:2.16.124.113543.1154777499.30246.19789.3503430456" 
 
 //* instantiatesCanonical = "http://varian.com/fhir/identifier/AcitivityDefintion/RadiotherapyPhasePrescriptionTemplate/ProstateSBRT01" //XRTS.Protocol probably just a free-text, not forcing an ActivityDefinition
-* basedOn.reference = "ServiceRequest/RadiotherapyCourseSummary-04-XRTS-Prostate" //Intent that this prescription bases on
+* basedOn.reference = "ServiceRequest/RadiotherapyCoursePrescription-04-XRTS-Prostate" //Intent that this prescription bases on
 * basedOn.display =  "Prostate-2Phases"
 //* replaces.reference = "ServiceRequest/RadiotherapyPhasePrescription-0" //Previous retired PhasePrescription that is replaced by this PhasePrescription
 * status = #active
@@ -191,7 +193,7 @@ Usage: #example
 * requester.display = "aria\\user1"
 * reasonCode = ICD10#C61.0 "Malignant neoplasm of prostate" //Try to use Condition resource for diagnosis in XRTS
 * reasonCode.text = "Malignant neoplasm of prostate" //Try to use Condition resource for diagnosis in XRTS 
-* reasonReference.reference = "Condition/Diagnosis-1" 
+* reasonReference.reference = "Condition/Diagnosis-2-Prostate" 
 * bodySite = SCT#181422007 "Entire Prostate" // "Body site that is treated with Radiotherapy"
 * bodySite.text = "Prostate"
 * note.text = "Free text note in Radiotherapy PhasePrescription"

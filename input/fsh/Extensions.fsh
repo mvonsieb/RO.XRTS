@@ -10,7 +10,7 @@ RuleSet: ExtensionContext(path)
 
 Extension: RadiotherapyTreatmentDeviceType
 Id: radiotherapyTreatmentDeviceType
-Title: "Type of Radiotherapy Treatment Device"
+Title: "Type of Treatment Device"
 Description: "The type of device that shall be used for delivering the treatment. This can be a type of treatment machine or auxiliary device, for example a positioning device. 
 Device instances are not specified here. Those are represented by resources of type Device."
 * . ^short = "Type of Treatment Device"
@@ -21,7 +21,7 @@ Device instances are not specified here. Those are represented by resources of t
 // http://hl7.org/fhir/us/mcode/2021May/StructureDefinition-mcode-radiotherapy-fractions-delivered.html
 Extension: RadiotherapyFractionsPrescribed
 Id: radiotherapy-fractions-prescribed
-Title: "Number of Prescribed Fractions in this scope"
+Title: "Number of Prescribed Fractions"
 Description: "The number of prescribed Fractions in this scope. 
 This extension SHALL only be present if the treatment is structured as countable Fractions, e.g. in a Prescription, which defines a series of Fractions. 
 In an Intent Summary, which can be implemented by multiple Prescriptions, the extension SHALL only be present if Fractions are counted across all Prescriptions of the Intent (in DICOM called Clinical Fraction Numbers)."
@@ -33,7 +33,7 @@ In an Intent Summary, which can be implemented by multiple Prescriptions, the ex
 //http://hl7.org/fhir/us/mcode/2021May/StructureDefinition-mcode-radiotherapy-dose-delivered-to-volume.html
 Extension: RadiotherapyDosePrescribedToVolume
 Id: radiotherapy-dose-prescribed-to-volume
-Title: "Dose Prescribed To a Radiotherapy Volume"
+Title: "Dose Prescribed to Volume"
 Description: "Dose parameters prescribed for one radiotherapy volume."
 * . ^short = "Prescribed Dose to a Dose Reference"
 * extension contains
@@ -52,7 +52,7 @@ Description: "Dose parameters prescribed for one radiotherapy volume."
 * extension[totalDosePrescribed].valueQuantity = UCUM#cGy
 * extension[totalDosePrescribed] ^short = "Total Radiation Dose Prescribed"
 * extension[totalDosePrescribed] ^definition = "The total dose prescribed to this volume within the scope of this ServiceRequest."
-* extension[fractionsPrescribed].value[x] only unsignedInt
+* extension[fractionsPrescribed].value[x] only positiveInt
 * extension[fractionsPrescribed] ^short = "Number of Prescribed Fractions"
 * extension[fractionsPrescribed] ^definition = "The number of Fraction in which dose to this volume is prescribed. See also extension RadiotherapyFractionsPrescribed which is used instead if fractions are not per volume, e.g. in Phase Prescriptions or Plans."
 
