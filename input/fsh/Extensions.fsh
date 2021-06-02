@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------
-// First drafts for XRTS. Not consolidated with IHE-RO XRTS yet.
+// First drafts for XRTS/RTTD discussions. Not reviewed with IHE-RO XRTS yet.
 // Contact: martin.vonsiebenthal@varian.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ RuleSet: ExtensionContext(path)
 Extension: RadiotherapyTreatmentDeviceType
 Id: radiotherapyTreatmentDeviceType
 Title: "Type of Treatment Device"
-Description: "The type of device that shall be used for delivering the treatment. This can be a type of treatment machine or auxiliary device, for example a positioning device. 
+Description: "The type of device used for delivering the Radiotherapy. This can be a type of treatment machine or auxiliary device, for example a positioning device. 
 Device instances are not specified here. Those are represented by resources of type Device."
 * . ^short = "Type of Treatment Device"
 * value[x] ^short = "Type of Treatment Device"
@@ -23,13 +23,12 @@ Extension: RadiotherapyFractionsPrescribed
 Id: radiotherapy-fractions-prescribed
 Title: "Number of Prescribed Fractions"
 Description: "The number of prescribed Fractions in this scope. 
-This extension SHALL only be present if the treatment is structured as countable Fractions, e.g. in a Prescription, which defines a series of Fractions. 
-In an Intent Summary, which can be implemented by multiple Prescriptions, the extension SHALL only be present if Fractions are counted across all Prescriptions of the Intent (in DICOM called Clinical Fraction Numbers)."
+This extension SHALL only be present if the treatment is structured as countable Fractions, for example in a Phase Prescription."
 * . ^short = "Number of Prescribed Fractions"
 * value[x] ^short = "Number of Prescribed Fractions"
 * value[x] only positiveInt
 
-//mCODE has not prescription yet, but expect that to be symmetric to 
+//mCODE has no prescription yet, but expect that to be symmetric to 
 //http://hl7.org/fhir/us/mcode/2021May/StructureDefinition-mcode-radiotherapy-dose-delivered-to-volume.html
 Extension: RadiotherapyDosePrescribedToVolume
 Id: radiotherapy-dose-prescribed-to-volume
@@ -59,9 +58,8 @@ Description: "Dose parameters prescribed for one radiotherapy volume."
 Extension: RadiotherapyEnergy
 Id: radiotherapy-energy
 Title: "Radiotherapy Energy"
-Description: "TBD."
+Description: "The radiation energy, preferably specified as decimal in MV. Can alternatively be represented as string or CodeableConcept."
 * . ^short = "Radiotherapy Energy"
 * value[x] ^short = "The radiation energy as decimal in MV. Can alternatively be represented as string or CodeableConcept." 
 * value[x] only SimpleQuantity or CodeableConcept 
 * valueQuantity = UCUM#MV "megavolt"
-* valueCodeableConcept from http://varian.com/fhir/CodeSystem/aria-radiotherapyPrescriptionTechnique (example) //In ARIA this is a customaizable selection at the moment

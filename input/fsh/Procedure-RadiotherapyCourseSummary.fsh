@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------
-// First drafts for XRTS. Not consolidated with IHE-RO XRTS yet.
+// First drafts for XRTS/RTTD discussions. Not reviewed with IHE-RO XRTS yet.
 // Contact: martin.vonsiebenthal@varian.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ Id: RadiotherapyCourseSummary
 Title: "Radiotherapy Course Summary"
 Description: "A Summary of the Treatment Progress in a Radiotherapy Course. 
 Whenever new contributions in the scope of the same Course are delivered, this resource is updated (no new resource created)."
-// * code = RID#mcode-radiotherapy-course-summary
+* basedOn MS
 * basedOn only Reference(RadiotherapyCoursePrescription)
 
 
@@ -22,12 +22,11 @@ Usage: #example
 * id = "RadiotherapyCourseSummary-04-XRTS-Prostate" //id of the FHIR Resource
 * meta.versionId = "1233456"
 * meta.lastUpdated = "2020-10-28T13:22:17+01:00"
-* meta.profile[0] = "http://varian.com/fhir/v1/StructureDefinition/RadiotherapyCourseSummary"
+* meta.profile[0] = "https://profiles.ihe.net/RO.XRTS/StructureDefinition/RadiotherapyCourseSummary"
 * meta.profile[1] = "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-course-summary"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-intent].valueCodeableConcept = SCT#373808002 "Curative - procedure intent"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-intent].valueCodeableConcept.text = "Curative"   
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-sessions].valueUnsignedInt = 2
-
 // Target Volume "Prostate"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][0].extension[volume].valueReference.reference = "BodyStructure/RadiotherapyVolume-03-Prostate"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][0].extension[totalDoseDelivered].valueQuantity.value = 360 
@@ -40,7 +39,6 @@ Usage: #example
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][2].extension[volume].valueReference.reference = "BodyStructure/RadiotherapyVolume-05-SemVs"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][2].extension[totalDoseDelivered].valueQuantity.value = 360 
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][2].extension[fractionsDelivered].valueUnsignedInt = 2 
-
 * identifier.use = #usual //Can use general identifiers. Here just using the same as the request on which the summary is basedOn
 * identifier.system = "http://varian.com/fhir/identifier/radiotherapyCourseId" //Use same id as for Course
 * identifier.value = "Prostate-2Phases"

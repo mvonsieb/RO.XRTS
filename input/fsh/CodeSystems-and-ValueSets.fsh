@@ -1,9 +1,8 @@
 //--------------------------------------------------------------------------------------------------------
-// First drafts for XRTS. Not consolidated with IHE-RO XRTS yet.
+// First drafts for XRTS/RTTD discussions. Not reviewed with IHE-RO XRTS yet.
 // Contact: martin.vonsiebenthal@varian.com
 //--------------------------------------------------------------------------------------------------------
 
-//--------------------------------------------------------------------------------------------------------
 ValueSet: RadiotherapyRequest 
 Id: radiotherapy-request 
 Title: "Radiotherapy Request"

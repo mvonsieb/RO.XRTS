@@ -1,8 +1,13 @@
+//--------------------------------------------------------------------------------------------------------
+// First drafts for XRTS/RTTD discussions. Not reviewed with IHE-RO XRTS yet.
+// Contact: martin.vonsiebenthal@varian.com
+//--------------------------------------------------------------------------------------------------------
 
 Instance:   Patient-5
 InstanceOf: Patient
 Title: "Example Female Patient"
 Description: "An example patient to relate Radiotherapy resources to."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].use = #usual
 * identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
@@ -28,6 +33,7 @@ Instance:   Patient-6
 InstanceOf: Patient
 Title: "Example Male Patient"
 Description: "An example patient to relate Radiotherapy resources to."
+Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[0].use = #usual
 * identifier[0].type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"

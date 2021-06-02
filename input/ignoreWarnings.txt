@@ -1,3 +1,6 @@
-// Add warning and/or information messages here after you've confirmed that they aren't really a problem
-// (And include comments like this justifying why)
+== Suppressed Messages ==
+
+# Your Reason Here
+# error or warning message to be suppressed
+# error or warning message to be suppressed
 
