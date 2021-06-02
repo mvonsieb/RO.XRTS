@@ -1,11 +1,13 @@
 # Status
-This repository is under-construction. Draft for XRTS created based on https://github.com/IHE/supplement-template.git
+This was a preliminary version, now moved to https://github.com/IHE/RO.XRTS
+This location was just for first experiments.
+
+This draft for XRTS was created based on https://github.com/IHE/supplement-template.git
 
 ![](input/images/XRTSScope.PNG)
 ![](input/images/RequestsProcedures.PNG)
 ![](input/images/ProfilesOverview.PNG)
 
-The IG should be moved under IHE. This location is just for first experiments.
 
 # Overall organization
 ![](https://github.com/IHE/supplement-template/wiki/SupplementOrganization.svg)
