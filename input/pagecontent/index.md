@@ -1,11 +1,22 @@
 
-### Organization of This Guide
 
-** Please see the [Aritfacts Page](artifacts.html). The rest is still mainly template **
+**Contents is work in progress, not reviewed in IHE-RO XRTS yet.**
+
+**Please see the [Artifacts Page](artifacts.html).**
+
+**The rest is still mostly template.**
+
+
+![RT Summary Model for XRTS](XRTSScope.svg)
+
+<div style="clear: left"/>
+<div style="clear: left"/>
+
+### Organization of This Guide
 
 This Implementation Guide template includes skeleton pages for each part of an IHE supplement. The instructions for how to fill out those sections can be found in the included [Supplement Template](suppl_template.html). This supplement template should not be included in your github repo or publication. It is included here for easy reference.
 
-**TODO: write your executive overview here. **
+**TODO: write your executive overview here.**
 
 Exchange of Radiotherapy Treatment Summaries between Radiation Oncology Systems and general Hospital Information Systems.
 

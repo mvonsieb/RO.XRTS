@@ -1,5 +1,29 @@
 
-**Put your title page stuff here - instructions at **
+
+**This contents is work in progress, not reviewed in IHE-RO XRTS yet.**
+
+**Please see the [Artifacts Page](artifacts.html).**
+
+**The rest is still mostly template.**
+
+
+## RT Summary Model
+
+The following figure shows the main entities modelled in the scope of this IG for exchanging Radiotherapy Summary information between RT Systems and Hospital Information Systems.
+
+![RT Summary Model for XRTS](XRTSScope.svg)
+
+<div style="clear: left"/>
+<div style="clear: left"/>
+
+To put these entities in a broader Radiotherapy context, the foloowing figure shows a larger scope including Treatment Plans, single Fractions, and the Intent, which is the main input to define treatment.
+Those additional entities are not in scope yet.
+
+![RT Summary Model for XRTS](RTSummaryModel.svg)
+
+<div style="clear: left"/>
+<div style="clear: left"/>
+
 
 ### About This Guide
 

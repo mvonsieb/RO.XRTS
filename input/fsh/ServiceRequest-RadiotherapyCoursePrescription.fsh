@@ -23,8 +23,6 @@ Usually, the Course addresses one disease and anatomical treatment site and cove
 
 // -------- Example Instances ---------------------------------------------------------
 
-
-
 Instance: RadiotherapyCoursePrescription-04-XRTS-Prostate
 InstanceOf: RadiotherapyCoursePrescription
 Description: "Radiotherapy CoursePrescription with elements of IHE-RO XRTS profile for a prostate example."
@@ -32,7 +30,7 @@ Usage: #example
 * id = "RadiotherapyCoursePrescription-04-XRTS-Prostate" //id of the FHIR Resource
 * meta.versionId = "219952" //Version of the resource on the server
 * meta.lastUpdated = "2020-07-03T10:07:41.050+02:00" //Update of the resource on the server. Added modification date of clinical contents as extension.
-* meta.profile = "http://varian.com/fhir/v1/StructureDefinition/RadiotherapyCoursePrescription"
+* meta.profile = "https://profiles.ihe.net/RO.XRTS/StructureDefinition/RadiotherapyCoursePrescription"
 // * extension[concurrentTherapy].valueCodeableConcept = SCT#367336001 "Chemotherapy"
 // * extension[concurrentTherapy].valueCodeableConcept.text = "Chemotherapy"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-intent].valueCodeableConcept = SCT#373808002 "Curative - procedure intent"
@@ -77,6 +75,7 @@ Usage: #example
 * bodySite.text = "Prostate"
 * note.text = "Free text note in Radiotherapy CoursePrescription"
 
+// ------------------------------------------------------------------------------------
 
 Instance: RadiotherapyCoursePrescription-11-RTTD-BilateralBreast
 InstanceOf: RadiotherapyCoursePrescription
