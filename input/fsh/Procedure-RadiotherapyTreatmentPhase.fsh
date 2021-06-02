@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------------------------------
-// First drafts for XRTS. Not consolidated with IHE-RO XRTS yet.
+// First drafts for XRTS/RTTD discussions. Not reviewed with IHE-RO XRTS yet.
 // Contact: martin.vonsiebenthal@varian.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -24,8 +24,6 @@ Whenever new contributions in the scope of the same Phase are delivered, this re
 
 // -------- Example Instances ---------------------------------------------------------
 
-//* extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][0].extension[volume].valueReference.reference = "BodyStructure/RadiotherapyVolume-03-Prostate"
-
 Instance: TeleradiotherapyTreatmentPhase-05-XRTS-Prostate-Phase1
 InstanceOf: TeleradiotherapyTreatmentPhase
 Description: "Treatment Summary for first phase"
@@ -33,11 +31,9 @@ Usage: #example
 * id = "TeleradiotherapyTreatmentPhase-05-XRTS-Prostate-Phase1" //id of the FHIR Resource
 * meta.versionId = "1233456"
 * meta.lastUpdated = "2020-10-28T13:22:17+01:00"
-* meta.profile[0] = "http://varian.com/fhir/v1/StructureDefinition/TeleradiotherapyTreatmentPhase"
+* meta.profile[0] = "https://profiles.ihe.net/RO.XRTS/StructureDefinition/TeleradiotherapyTreatmentPhase"
 * meta.profile[1] = "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-teleradiotherapy-treatment-phase"
-
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-treatment-intent].valueCodeableConcept = SCT#373808002 "Curative - procedure intent"
-
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-fractions-delivered].valueUnsignedInt = 2
 // Prescription Target Site "Prostate"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][0].extension[volume].valueReference.reference = "BodyStructure/RadiotherapyVolume-03-Prostate"
@@ -48,7 +44,6 @@ Usage: #example
 // Prescription Target Site "Sem Vs"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][2].extension[volume].valueReference.reference = "BodyStructure/RadiotherapyVolume-05-SemVs"
 * extension[http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-radiotherapy-dose-delivered-to-volume][2].extension[totalDoseDelivered].valueQuantity.value = 360 
-
 * identifier.use = #usual //Can use general identifiers. Here just using the same as the request on which the summary is basedOn
 * identifier.system = "http://varian.com/fhir/identifier/radiotherapPrescriptionId"
 * identifier.value = "Prostate-Phase1"
